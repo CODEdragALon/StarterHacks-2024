@@ -11,10 +11,9 @@
 }
 
 #map {
-    width: ;
     height: 60rem;
-    margin-left: 15rem;
-    margin-right: 15rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
     border: #d42929 solid 10px;
     border-radius: 40px;
 }
@@ -24,4 +23,19 @@
     align-items: center;
     justify-content: center;
 
+}
+
+.location-track {
+    margin-top: 2rem;
+    margin-right: 4rem;
+    margin-left: 4rem;
+    display: flex;
+}
+
+#location {
+    font-size: 26px;
+}
+
+#location-button {
+    font-size: 30px;
 }
