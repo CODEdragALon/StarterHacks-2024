@@ -1,9 +1,9 @@
-body {
-    background-color: #FFA987;
+* {
+    background-color: #dbb6a7;
 }
 
 #intro {
-    margin-top: 5rem;
+    margin-top: 3rem;
     text-align: center;
     font-size: 4.5rem;
     color: #d42929;
