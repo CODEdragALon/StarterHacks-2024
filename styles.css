@@ -34,8 +34,10 @@
 
 #location {
     font-size: 26px;
+    border-radius: 10px;
 }
 
 #location-button {
     font-size: 30px;
+    border-radius: 10px;
 }

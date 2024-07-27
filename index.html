@@ -15,13 +15,13 @@
                 <h1 class="display-1">FireTracker</h1>
                 <h2 class="text-muted">Track the location of wildfires near you!</h2>
             </div>
-            <div id ="map">
-            </div>
-            <form class="location-track" name="location_requested">
-                <input maxlength="20" class ="form-control" type="text" id="location" name="location_input" placeholder="Location:"></input>
-                <input id="location-button" class="btn btn-danger" value="Track Wildfires" type="submit" onclick=change_location()>
-            </form>
+        <div id ="map">
         </div>
+        <form class="location-track" name="location_requested">
+            <input maxlength="20" class ="form-control" type="text" id="location" name="location_input" placeholder="Location:"></input>
+            <button id="location-button" class="btn btn-danger" type="submit" onclick="userRelocate()">Track Wildfires</button>
+        </form>
+    </div>
     <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <script src="userlocator.js"></script>   
     <script src="userrelocator.js"></script> 
