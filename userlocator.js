@@ -18,4 +18,5 @@ navigator.geolocation.getCurrentPosition(function(location) {
     
     // Adding layer to the map
     map.addLayer(layer);
+
 });

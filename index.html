@@ -17,15 +17,15 @@
             </div>
             <div id ="map">
             </div>
-            <form class="location-track">
-                <input maxlength="20" class ="form-control" type="text" id="location" name="location" placeholder="Location:"></input>
-                <input id="location-button" class="btn btn-danger" value="Track Wildfires" type="submit" for="location">
+            <form class="location-track" name="location_requested">
+                <input maxlength="20" class ="form-control" type="text" id="location" name="location_input" placeholder="Location:"></input>
+                <input id="location-button" class="btn btn-danger" value="Track Wildfires" type="submit" onclick=change_location()>
             </form>
         </div>
     <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-    <script src="userlocator.js"></script>    
+    <script src="userlocator.js"></script>   
+    <script src="userrelocator.js"></script> 
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/tomickigrzegorz/autocomplete@1.8.3/dist/js/autocomplete.min.js"></script>
     <script src="https://unpkg.com/leaflet-geosearch@latest/dist/bundle.min.js"></script>
     </div>
 </body>
