@@ -7,15 +7,21 @@
     text-align: center;
     font-size: 4.5rem;
     color: #d42929;
+    margin-bottom: 4rem;
 }
 
 #map {
-    width: 40rem;
-    height: 20rem;
+    width: ;
+    height: 60rem;
+    margin-left: 15rem;
+    margin-right: 15rem;
+    border: #d42929 solid 10px;
+    border-radius: 40px;
 }
 
 .content {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
 }
