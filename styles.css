@@ -8,3 +8,14 @@ body {
     font-size: 4.5rem;
     color: #d42929;
 }
+
+#map {
+    width: 40rem;
+    height: 20rem;
+}
+
+.content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
