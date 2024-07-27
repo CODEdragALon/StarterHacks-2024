@@ -23,32 +23,10 @@
             </form>
         </div>
     <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-    
-    <script>
-        // get location of user
-        navigator.geolocation.getCurrentPosition(function(location) {
-            var lat = location.coords.latitude;
-            var lon = location.coords.longitude;
-            console.log(lat, lon);
-
-            // Creating map options
-            var mapOptions = {
-            center: [lat, lon],
-            zoom: 10
-            }
-
-            // Creating a map object
-            var map = new L.map("map", mapOptions);
-        
-            // Creating a Layer object
-            var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-            
-            // Adding layer to the map
-            map.addLayer(layer);
-        });
-        </script>    
-    
+    <script src="userlocator.js"></script>    
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/tomickigrzegorz/autocomplete@1.8.3/dist/js/autocomplete.min.js"></script>
+    <script src="https://unpkg.com/leaflet-geosearch@latest/dist/bundle.min.js"></script>
     </div>
 </body>
 </html>
