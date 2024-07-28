@@ -50,7 +50,6 @@ function loadData() {
     for (let i=0; i < mydata.length; i++) {
         let wildFire = mydata[i]
 
-<<<<<<< HEAD
         if (user_province == wildFire.agency) {
             pin = L.circleMarker([wildFire.lat, wildFire.lon], {
                 radius: 5
@@ -59,14 +58,13 @@ function loadData() {
             .openPopup();
             pin.setStyle({color: 'red'});
         }
-=======
+
         pin = L.circleMarker([wildFire.lat, wildFire.lon], {
             radius: 5
         }).addTo(map)
         .bindPopup(`${wildFire.firename}, in ${province_name[wildFire.agency]}`, {autoPan: false})
         .openPopup();
         pin.setStyle({color: 'red'});
->>>>>>> 8a0927d77472b7fde08232ddb4558cc70c940a50
     }
 
     //Create pins of all active fires in Canada (must comment province active fire pins first)
