@@ -67,7 +67,7 @@ function loadData() {
         let wildFire = mydata[i]
 
         pin = L.circleMarker([wildFire.lat, wildFire.lon], {
-            radius: wildFire.hectares
+            radius: 5
         }).addTo(map)
         .bindPopup(`${wildFire.firename}, in ${province_name[wildFire.agency]}.\nStarted ${wildFire.startdate} ${wildFire.timezone}.\nHectares: ${wildFire.hectares}\nStage of Control: ${wildFire.stage_of_control}\nResponse Type: ${wildFire.response_type}`) 
         .openPopup();
