@@ -43,4 +43,4 @@ navigator.geolocation.getCurrentPosition(function(location) {
         });
 
     map.addControl(searchControl);
-    });
+});
