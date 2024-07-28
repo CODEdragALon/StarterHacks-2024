@@ -57,7 +57,6 @@ function loadData() {
     //             radius: 5
     //         }).addTo(map)                                                                                                                                                                                                                                                                     
     //         .bindPopup(`${wildFire.firename}, in ${province_name[wildFire.agency]}.\nStarted ${wildFire.startdate} ${wildFire.timezone}.\nHectares:${wildFire.hectares}\nStage of Control:${wildFire.stage_of_control}\nResponse Type:${wildFire.response_type}`, {autoPan: false}) 
-    //         .openPopup();
     //         pin.setStyle({color: 'red'});
     //     }
     // }
@@ -70,7 +69,6 @@ function loadData() {
             radius: 5
         }).addTo(map)
         .bindPopup(`${wildFire.firename}, in ${province_name[wildFire.agency]}.\nStarted ${wildFire.startdate} ${wildFire.timezone}.\nHectares: ${wildFire.hectares}\nStage of Control: ${wildFire.stage_of_control}\nResponse Type: ${wildFire.response_type}`, {autoPan: false}) 
-        .openPopup();
         pin.setStyle({color: 'red'});
     }
 }
