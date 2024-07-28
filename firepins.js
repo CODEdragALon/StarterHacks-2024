@@ -33,6 +33,6 @@ L.marker([coordinates[1][0], coordinates[1][1]]).addTo(map)
 // Add coordinates of fires to map
 //for (var i=0; i < coordinates.length; i++) {
     //L.marker([coordinates[i][0], coordinates[i][1]]).addTo(map)
-    //.bindPopup('A pretty CSS popup.<br> Easily customizable.')
-    //.openPopup();
+        //.bindPopup('A pretty CSS popup.<br> Easily customizable.')
+        //.openPopup();
 //}
