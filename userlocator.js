@@ -50,9 +50,6 @@ navigator.geolocation.getCurrentPosition(function(location) {
 
     map.addControl(searchControl);
 
-
-    
-});
 }, error => {
     var mapOptions = {
         center: [51.495, -0.083],
