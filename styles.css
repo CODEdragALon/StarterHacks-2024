@@ -3,11 +3,11 @@ body {
 }
 
 #intro {
-    margin-top: 3rem;
+    margin-top: 1rem;
     text-align: center;
     font-size: 4.5rem;
     color: #d42929;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 
 #map {

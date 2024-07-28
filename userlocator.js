@@ -14,7 +14,7 @@ navigator.geolocation.getCurrentPosition(function(location) {
     // Creating map options
     var mapOptions = {
         center: [lat, lon],
-        zoom: 10
+        zoom: 7
     }
 
     // Creating a map object
@@ -27,7 +27,8 @@ navigator.geolocation.getCurrentPosition(function(location) {
     // Adding layer to the map
     map.addLayer(layer);
 
-    // userlocator.js
+    // Add marker to user location
+    var marker = L.marker([lat, lon]).addTo(map);
 
     // Import the necessary classes from leaflet-geosearch
     const { GeoSearchControl, OpenStreetMapProvider } = window.GeoSearch;
@@ -51,6 +52,7 @@ navigator.geolocation.getCurrentPosition(function(location) {
     map.addControl(searchControl);
 
 }, error => {
+    alert("Location not found. Please enable Location Access.")
     var mapOptions = {
         center: [53, -127],
         zoom: 5
