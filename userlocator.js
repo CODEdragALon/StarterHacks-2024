@@ -1,17 +1,6 @@
 // Define map variable in a higher scope
 var map;
 
-// Function to relocate user based on input
-function userRelocate(event) {
-    event.preventDefault();
-    var locationInput = document.getElementById('location').value;
-    // Assuming you have a function to get coordinates from the location input
-    var coordinates = getCoordinatesFromLocation(locationInput);
-    if (coordinates) {
-        map.panTo(new L.LatLng(coordinates.lat, coordinates.lng));
-    }
-}
-
 // Get location of user
 navigator.geolocation.getCurrentPosition(function(location) {
     var lat = location.coords.latitude;
@@ -32,18 +21,26 @@ navigator.geolocation.getCurrentPosition(function(location) {
     
     // Adding layer to the map
     map.addLayer(layer);
-});
 
-// Dummy function to simulate getting coordinates from a location
-// Replace this with actual implementation
-function getCoordinatesFromLocation(location) {
-    return { lat: 0, lng: 0};
-}
+    // userlocator.js
 
-// Add event listener to the form submission
-var form = document.querySelector('form[name="location_requested"]');
-if (form) {
-    form.addEventListener('submit', userRelocate);
-} else {
-    console.error('Form not found');
-}
+    // Import the necessary classes from leaflet-geosearch
+    const { GeoSearchControl, OpenStreetMapProvider } = window.GeoSearch;
+
+    // Initialize the search provider
+    const provider = new OpenStreetMapProvider();
+
+    // Add the search control to the map
+        const searchControl = new GeoSearchControl({
+            provider: provider,
+            style: 'bar', // Optional: 'button' or 'bar'
+            autoComplete: true, // Enable autocomplete
+            autoCompleteDelay: 250, // Delay for autocomplete
+            showMarker: true, // Show marker at the search result location
+            retainZoomLevel: false, // Retain the current zoom level
+            animateZoom: true, // Animate the zoom
+            keepResult: true // Keep the search result visible
+        });
+
+    map.addControl(searchControl);
+    });
