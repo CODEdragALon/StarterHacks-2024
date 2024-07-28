@@ -37,40 +37,40 @@ function loadData() {
 
     ///Create pins of all active fires in users province (must comment Canada active fire pins first)
     //Determine province of user
-    let user_province = null;
-    const keys = Object.keys(provinces);
+    // let user_province = null;
+    // const keys = Object.keys(provinces);
 
-    for(let i=0; i < keys.length; i++) {
-        const ranges = provinces[keys[i]];
-        if (lat >= ranges[0] && lat <= ranges[2] && lon >= ranges[1] && lat <= ranges[3]) {
-            user_province = keys[i];
-            break;
-        }
-    }
+    // for(let i=0; i < keys.length; i++) {
+    //     const ranges = provinces[keys[i]];
+    //     if (lat >= ranges[0] && lat <= ranges[2] && lon >= ranges[1] && lat <= ranges[3]) {
+    //         user_province = keys[i];
+    //         break;
+    //     }
+    // }
 
-
-    for (let i=0; i < mydata.length; i++) {
-        let wildFire = mydata[i]
-
-        if (user_province == wildFire.agency) {
-            pin = L.circleMarker([wildFire.lat, wildFire.lon], {
-                radius: 5
-            }).addTo(map)                                                                                                                                                                                                                                                                     
-            .bindPopup(`${wildFire.firename}, in ${province_name[wildFire.agency]}.\nStarted ${wildFire.startdate} ${wildFire.timezone}.\nHectares:${wildFire.hectares}\nStage of Control:${wildFire.stage_of_control}\nResponse Type:${wildFire.response_type}`, {autoPan: false}) 
-            .openPopup();
-            pin.setStyle({color: 'red'});
-        }
-    }
-
-    ///Create pins of all active fires in Canada (must comment province active fire pins first)
-    // for (let i=0; i<mydata.length; i++) {
+    // //Create pins
+    // for (let i=0; i < mydata.length; i++) {
     //     let wildFire = mydata[i]
 
-    //     pin = L.circleMarker([wildFire.lat, wildFire.lon], {
-    //         radius: 5
-    //     }).addTo(map)
-    //     .bindPopup(`${wildFire.firename}, in ${province_name[wildFire.agency]}.\nStarted ${wildFire.startdate} ${wildFire.timezone}.\nHectares: ${wildFire.hectares}\nStage of Control: ${wildFire.stage_of_control}\nResponse Type: ${wildFire.response_type}`, {autoPan: false}) 
-    //     .openPopup();
-    //     pin.setStyle({color: 'red'});
+    //     if (user_province == wildFire.agency) {
+    //         pin = L.circleMarker([wildFire.lat, wildFire.lon], {
+    //             radius: 5
+    //         }).addTo(map)                                                                                                                                                                                                                                                                     
+    //         .bindPopup(`${wildFire.firename}, in ${province_name[wildFire.agency]}.\nStarted ${wildFire.startdate} ${wildFire.timezone}.\nHectares:${wildFire.hectares}\nStage of Control:${wildFire.stage_of_control}\nResponse Type:${wildFire.response_type}`, {autoPan: false}) 
+    //         .openPopup();
+    //         pin.setStyle({color: 'red'});
+    //     }
     // }
+
+    ///Create pins of all active fires in Canada (must comment province active fire pins first)
+    for (let i=0; i<mydata.length; i++) {
+        let wildFire = mydata[i]
+
+        pin = L.circleMarker([wildFire.lat, wildFire.lon], {
+            radius: 5
+        }).addTo(map)
+        .bindPopup(`${wildFire.firename}, in ${province_name[wildFire.agency]}.\nStarted ${wildFire.startdate} ${wildFire.timezone}.\nHectares: ${wildFire.hectares}\nStage of Control: ${wildFire.stage_of_control}\nResponse Type: ${wildFire.response_type}`, {autoPan: false}) 
+        .openPopup();
+        pin.setStyle({color: 'red'});
+    }
 }
