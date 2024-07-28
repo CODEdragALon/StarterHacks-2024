@@ -52,8 +52,8 @@ navigator.geolocation.getCurrentPosition(function(location) {
 
 }, error => {
     var mapOptions = {
-        center: [51.495, -0.083],
-        zoom: 10
+        center: [53, -127],
+        zoom: 5
     }
 
     // Creating a map object
