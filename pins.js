@@ -3,13 +3,17 @@ var mydata = JSON.parse(data);
 const provinces = {
     "bc": "British Columbia",
     "on": "Ontario",
-    "nt": "Nunavut",
+    "nt": "Northwest Territories",
     "qc": "Qubec",
     "mb": "Manitoba",
-    "sk": "Saskachewan",
+    "sk": "Saskatchewan",
     "ab": "Alberta",
     "yt": "Yukon",
-
+    "nl": "Newfoundland and Labrador",
+    "pe": "Prince Edward Island",
+    "ns": "Nova Scotia",
+    "nb": "New Brunswick",
+    "nu": "Nunavut",
 }
 
 function loadData() {
