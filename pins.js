@@ -25,5 +25,6 @@ function loadData() {
         }).addTo(map)
         .bindPopup(`${wildFire.firename}, in ${provinces[wildFire.agency]}`);
         pin.setStyle({color: 'red'});
+        pin.on('click', function() { this.openPopup(); });
     }
 }
