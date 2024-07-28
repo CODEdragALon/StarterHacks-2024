@@ -27,8 +27,8 @@ fs.readFile(path, "utf8", (err, data) => {
 });
 
 L.marker([coordinates[1][0], coordinates[1][1]]).addTo(map)
-.bindPopup('A pretty CSS popup.<br> Easily customizable.')
-.openPopup();
+    .bindPopup('A pretty CSS popup.<br> Easily customizable.')
+    .openPopup();
 
 // Add coordinates of fires to map
 //for (var i=0; i < coordinates.length; i++) {
