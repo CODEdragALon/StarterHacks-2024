@@ -90,8 +90,6 @@ navigator.geolocation.getCurrentPosition(function(location) {
      map.addControl(searchControl);
      map.addControl(new L.Control.Fullscreen());
 
-
-
 }, {
     timeout: 10000,
     maximumAge: 1000,
