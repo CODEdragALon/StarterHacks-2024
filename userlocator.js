@@ -50,6 +50,7 @@ navigator.geolocation.getCurrentPosition(function(location) {
 
 
     map.addControl(searchControl);
+    map.addControl(new L.Control.Fullscreen());
 
 }, error => {
     alert("Location not found. Please enable Location Access.")
@@ -88,6 +89,8 @@ navigator.geolocation.getCurrentPosition(function(location) {
  
      map.addControl(searchControl);
      map.addControl(new L.Control.Fullscreen());
+
+
 
 }, {
     timeout: 10000,
