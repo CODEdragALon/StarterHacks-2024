@@ -21,9 +21,9 @@ function loadData() {
         let wildFire = mydata[i]
 
         pin = L.circleMarker([wildFire.lat, wildFire.lon], {
-            radius: 5, autoPan: false
+            radius: 5
         }).addTo(map)
-        .bindPopup(`${wildFire.firename}, in ${provinces[wildFire.agency]}`);
+        .bindPopup(`${wildFire.firename}, in ${provinces[wildFire.agency]}`, {autoPan: false});
         pin.setStyle({color: 'red'});
         pin.on('click', function() { this.openPopup(); });
     }
