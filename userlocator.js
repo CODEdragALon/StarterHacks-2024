@@ -1,14 +1,14 @@
+// Declare lat and lon in a higher scope
+var lat, lon;
+
 // Define map variable in a higher scope
 var map;
 
-function hello(){
-    console.log("Hello")
-}
 
 // Get location of user
 navigator.geolocation.getCurrentPosition(function(location) {
-    var lat = location.coords.latitude;
-    var lon = location.coords.longitude;
+    lat = location.coords.latitude;
+    lon = location.coords.longitude;
     console.log(lat, lon);
 
     // Creating map options
