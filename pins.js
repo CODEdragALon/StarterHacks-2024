@@ -23,8 +23,7 @@ function loadData() {
         pin = L.circleMarker([wildFire.lat, wildFire.lon], {
             radius: 5
         }).addTo(map)
-        .bindPopup(`${wildFire.firename}, in ${provinces[wildFire.agency]}`) 
-        .openPopup();
+        .bindPopup(`${wildFire.firename}, in ${provinces[wildFire.agency]}`);
         pin.setStyle({color: 'red'});
     }
 }
