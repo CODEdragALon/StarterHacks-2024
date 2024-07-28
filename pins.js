@@ -38,12 +38,12 @@ function loadData() {
     ///Create pins of all active fires in users province (must comment Canada active fire pins first)
     //Determine province of user
     let user_province = null;
-    const province = Object.keys(provinces);
+    const keys = Object.keys(provinces);
 
-    for(let i=0; i < province.length; i++) {
-        const ranges = provinces[province[i]];
+    for(let i=0; i < keys.length; i++) {
+        const ranges = provinces[keys[i]];
         if (lat >= ranges[0] && lat <= ranges[2] && lon >= ranges[1] && lat <= ranges[3]) {
-            user_province = province[i];
+            user_province = keys[i];
             break;
         }
     }
