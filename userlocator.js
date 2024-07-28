@@ -1,6 +1,10 @@
 // Define map variable in a higher scope
 var map;
 
+function hello(){
+    console.log("Hello")
+}
+
 // Get location of user
 navigator.geolocation.getCurrentPosition(function(location) {
     var lat = location.coords.latitude;
@@ -15,9 +19,10 @@ navigator.geolocation.getCurrentPosition(function(location) {
 
     // Creating a map object
     map = new L.map("map", mapOptions);
-
+    map.whenReady(loadData)
     // Creating a Layer object
     var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+    // map.on("load", loadData)
     
     // Adding layer to the map
     map.addLayer(layer);
@@ -43,4 +48,7 @@ navigator.geolocation.getCurrentPosition(function(location) {
         });
 
     map.addControl(searchControl);
+
+
+    
 });

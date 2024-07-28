@@ -3,6 +3,9 @@ const fs = require("fs");
 //Path to data
 const path = "activefires.csv";
 
+//Initialize coordinate list
+const coordinates = [];
+
 ///Get coordinates of fires
 //Read the data file
 fs.readFile(path, "utf8", (err, data) => {
@@ -15,8 +18,6 @@ fs.readFile(path, "utf8", (err, data) => {
 
     //Otherwise split data into lines
     const lines = data.split("\n");
-    //Initialize coordinate list
-    const coordinates = [];
 
     //Get coordinate info (latitude and longitude) from current data line
     lines.forEach((line) => {
@@ -32,18 +33,20 @@ fs.readFile(path, "utf8", (err, data) => {
         //Add coordinates to list
         coordinates.push(latAndLon);
     });
+
+    //Remove headers
+    coordinates.shift();
+    console.log(coordinates);
 });
 
-//Remove headers
-coordinates.shift();
 
 L.marker([coordinates[1][0], coordinates[1][1]]).addTo(map)
     .bindPopup('A pretty CSS popup.<br> Easily customizable.')
     .openPopup();
 
-// Add coordinates of fires to map
-//for (var i=0; i < coordinates.length; i++) {
-    //L.marker([coordinates[i][0], coordinates[i][1]]).addTo(map)
-        //.bindPopup('A pretty CSS popup.<br> Easily customizable.')
-        //.openPopup();
-//}
+    // Add coordinates of fires to map
+    //for (var i=0; i < coordinates.length; i++) {
+        //L.marker([coordinates[i][0], coordinates[i][1]]).addTo(map)
+            //.bindPopup('A pretty CSS popup.<br> Easily customizable.')
+            //.openPopup();
+    //}
