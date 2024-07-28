@@ -22,7 +22,7 @@ navigator.geolocation.getCurrentPosition(function(location) {
     map.whenReady(loadData)
     // Creating a Layer object
     var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-    // map.on("load", loadData)
+    map.on("load", loadData)
     
     // Adding layer to the map
     map.addLayer(layer);
@@ -89,6 +89,8 @@ navigator.geolocation.getCurrentPosition(function(location) {
  
      map.addControl(searchControl);
      map.addControl(new L.Control.Fullscreen());
+
+
 
 }, {
     timeout: 10000,
