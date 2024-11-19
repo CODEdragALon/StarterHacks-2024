@@ -1,5 +1,14 @@
 var mydata = JSON.parse(data);
 
+fetch('https://cwfis.cfs.nrcan.gc.ca/geoserver/public/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=public:hotspots_last24hrs&maxFeatures=100000&outputFormat=JSON')
+    .then(response => response.json())
+    .then(jsonData => {
+        mydata = JSON.parse(jsonData);
+        loadData();
+    })
+    .catch(error => console.error('Error fetching the JSON data:', error));
+
+
 const province_name = {
     "bc": "British Columbia",
     "on": "Ontario",
