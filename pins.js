@@ -1,10 +1,17 @@
-var mydata = JSON.parse(data);
-
 fetch('https://cwfis.cfs.nrcan.gc.ca/geoserver/public/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=public:hotspots_last24hrs&maxFeatures=100000&outputFormat=JSON')
     .then(response => response.json())
     .then(jsonData => {
-        mydata = JSON.parse(jsonData);
-        loadData();
+        const mydata = jsonData;
+        for (let i=0; i<mydata["features"].length; i++) {
+            let wildFire = mydata.features[i].properties;
+    
+            pin = L.circleMarker([wildFire.lat, wildFire.lon], {
+                radius: 5
+            }).addTo(map)
+            .bindPopup(`Started ${wildFire.rep_date}`, {autoPan: false}) 
+            pin.setStyle({color: 'red'});
+        }
+
     })
     .catch(error => console.error('Error fetching the JSON data:', error));
 
@@ -71,13 +78,5 @@ function loadData() {
     // }
 
     ///Create pins of all active fires in Canada (must comment province active fire pins first)
-    for (let i=0; i<mydata.length; i++) {
-        let wildFire = mydata[i]
 
-        pin = L.circleMarker([wildFire.lat, wildFire.lon], {
-            radius: 5
-        }).addTo(map)
-        .bindPopup(`${wildFire.firename}, in ${province_name[wildFire.agency]}.\nStarted ${wildFire.startdate} ${wildFire.timezone}.\nHectares: ${wildFire.hectares}\nStage of Control: ${wildFire.stage_of_control}\nResponse Type: ${wildFire.response_type}`, {autoPan: false}) 
-        pin.setStyle({color: 'red'});
-    }
 }
